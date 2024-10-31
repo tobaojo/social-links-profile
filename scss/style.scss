@@ -1,6 +1,9 @@
 $green: hsl(75, 94%, 57%);
 $white: hsl(0, 0%, 100%);
-
+$grey700: hsl(0, 0%, 20%);
+$grey800: hsl(0, 0%, 12%);
+$grey900: hsl(0, 0%, 8%);
+$fontFamily: "Inter", sans-serif;
 *,
 *::after,
 *::before {
@@ -10,5 +13,110 @@ $white: hsl(0, 0%, 100%);
 }
 
 body {
-  background-color: white;
+  background-color: $grey900;
+  font-family: $fontFamily;
+  color: white;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: $grey800;
+  height: auto;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 24px;
+  margin: 10px;
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px auto;
+    font-weight: 700;
+  }
+
+  .main-name {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .location {
+    text-align: center;
+    color: $green;
+    font-size: 17px;
+  }
+  .under-title {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    .list-item {
+      list-style-type: none;
+      width: 100%;
+      max-width: 325px;
+      height: 50px;
+      background-color: $grey700;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 10px;
+      text-align: center;
+      overflow: hidden;
+      transition: background-color 0.5s ease;
+      a {
+        display: block;
+        text-decoration: none;
+        color: $white;
+        font-weight: 600;
+      }
+    }
+    .list-item:hover {
+      cursor: pointer;
+      background-color: $green;
+      a {
+        color: $grey900;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+  }
+  .main-name {
+    font-size: 1.2rem;
+  }
+  .location {
+    font-size: 1rem;
+  }
+  .social-links {
+    .list-item {
+      height: auto;
+      padding: 10px;
+    }
+  }
 }
